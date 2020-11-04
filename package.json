@@ -1,0 +1,23 @@
+{
+  "name": "Bot(typescript)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.8",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.5",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "nodemon -e ts --exec \"npm run build && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
