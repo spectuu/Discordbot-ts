@@ -4,7 +4,7 @@ config();
 import { Client, Message } from 'discord.js'
 const client: Client = new Client()
 
-import { prefix } from './config.json'
+import { prefix } from './prefix.json'
 
 client.on("ready", () => {
 console.log(`Bot is ready!`)
