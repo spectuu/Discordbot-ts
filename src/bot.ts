@@ -15,7 +15,7 @@ console.log(message.content)
 
 if(message.content.startsWith(`${prefix}hola`)){
 message.channel.send(`Adios`);
-}
+    }
 })
 
 client.login(process.env.TOKEN);
