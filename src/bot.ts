@@ -10,12 +10,12 @@ client.on("ready", () => {
 console.log(`Bot is ready!`)
 })
 
-client.on(`${prefix}hola`, (message: Message) => {
+client.on("message", (message: Message) => {
 console.log(message.content)
 
 if(message.content.startsWith(`${prefix}hola`)){
 message.channel.send(`Adios`);
-    }
+}
 })
 
 client.login(process.env.TOKEN);
