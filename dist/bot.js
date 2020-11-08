@@ -8,7 +8,7 @@ const config_json_1 = require("./config.json");
 client.on("ready", () => {
     console.log(`Bot is ready!`);
 });
-client.on("message", (message) => {
+client.on(`${config_json_1.prefix}hola`, (message) => {
     console.log(message.content);
     if (message.content.startsWith(`${config_json_1.prefix}hola`)) {
         message.channel.send(`Adios`);
