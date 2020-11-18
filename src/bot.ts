@@ -14,8 +14,8 @@ client.on("message", (message: Message) => {
 console.log(message.content)
 
 if(message.content.startsWith(`${prefix}hola`)){
-message.channel.send(`Adios`);
-}
+message.reply(`Adios`);
+    }
 })
 
 client.login(process.env.TOKEN);
