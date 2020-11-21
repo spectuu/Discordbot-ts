@@ -22,20 +22,20 @@ client.on("message", (message) => __awaiter(void 0, void 0, void 0, function* ()
     console.log(message.content);
     if (message.content.startsWith(`${prefix_json_1.prefix}kick`)) {
         if ((_a = message.member) === null || _a === void 0 ? void 0 : _a.hasPermission(['ADMINISTRATOR', 'KICK_MEMBERS'])) {
-            const member = (_b = message.mentions.members) === null || _b === void 0 ? void 0 : _b.first();
-            if (member) {
-                const bannedmember = yield member.kick();
-                message.channel.send('The user' + bannedmember.user.username + 'has been kicked');
+            const memberbanned = (_b = message.mentions.members) === null || _b === void 0 ? void 0 : _b.first();
+            if (memberbanned) {
+                const kickedmember = yield memberbanned.kick();
+                message.channel.send('The user' + kickedmember.user.username + 'has been kicked');
             }
         }
     }
     else {
-        message.reply('You dont have permission to use this command');
+        message.channel.send(`${message.author.username}Aqui mando yo malparido ahora sientate y mira como me bugeo para joderte la vida`);
     }
 }));
 client.on("message", message => {
     if (message.content.startsWith(`${prefix_json_1.prefix}hello`)) {
-        message.reply('hi!');
+        message.channel.send('hi!');
     }
 });
 client.login(process.env.TOKEN);

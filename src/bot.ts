@@ -1,34 +1,34 @@
 import {config} from 'dotenv'
 config();
 
-import { Client, Message } from 'discord.js'
+import { Client, Message } from 'discord.js';
 const client: Client = new Client()
 
-import { prefix } from './prefix.json'
+import { prefix } from './prefix.json';
 
 client.on("ready", () => {
 console.log(`Bot is ready!`)
-})
+});
 
-client.on("message", async (message: Message) => {
+client.on("message", async (message) => {
 console.log(message.content)
 if(message.content.startsWith(`${prefix}kick`)){
     if(message.member?.hasPermission(['ADMINISTRATOR', 'KICK_MEMBERS'])){       
-    const member = message.mentions.members?.first();
-    if(member){
-        const bannedmember = await member.kick();
-        message.channel.send('The user' + bannedmember.user.username + 'has been kicked')
+    const memberbanned = message.mentions.members?.first();
+    if(memberbanned){
+        const kickedmember = await memberbanned.kick();
+        message.channel.send('The user' + kickedmember.user.username + 'has been kicked');
     }
   }
 }else{
-    message.reply('You dont have permission to use this command')
+    message.reply(`Aqui mando yo malparido ahora sientate y mira como me bugeo para joderte la vida`)
 }
-})
+});
 
 client.on("message", message => {
     if(message.content.startsWith(`${prefix}hello`)){
-        message.reply('hi!')
-    }
-})
+        message.channel.send('hi!')
+    } 
+});
 
 client.login(process.env.TOKEN);
